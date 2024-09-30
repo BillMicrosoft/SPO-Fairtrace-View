@@ -1,0 +1,240 @@
+/* General styles for all pages */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+.header-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100vw;
+    height: 25vh;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.left-column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 250px;
+}
+
+.logo img {
+    max-height: 150px;
+    width: auto;
+    align-items: center;
+    margin-right: 10px;
+    max-width: 100%;
+}
+
+.right-column {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: flex-end;
+}
+
+.right-column > div {
+    margin-left: 20px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #c4d837;
+    min-height: 100vh;
+    width: 250px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.sidebar a {
+    display: flex;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    justify-content: start;
+}
+
+.sidebar a:hover {
+    background-color: #00a8e0;
+}
+
+.notification-badge-sidebar {
+    margin-left: 20px;
+    background-color: #ff6f61;
+    color: white;
+    padding: 3px 8px;
+    font-size: 12px;
+    border-radius: 50px;
+    font-weight: bold;
+}
+
+.sidebar i {
+    margin-right: 10px;
+}
+
+/* Prevent content from wrapping under the sidebar */
+.container-fluid .row {
+    display: flex;
+    flex-wrap: nowrap; /* Keeps content next to the sidebar */
+}
+
+/* Content Area */
+.col-md-10 {
+    padding: 0 10px;
+    flex-grow: 1;
+}
+
+.col-md-10.content {
+    flex-grow: 1;
+    min-width: 0;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.content .card {
+    padding: 20px;
+    border: none;
+}
+
+/* Card styles for index page */
+.index-page .content .card {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 1px;
+    height: 25vh;
+    padding-top: 10px;
+    border: none;
+    box-shadow: none;
+    position: relative;
+}
+
+.index-page .card h3 {
+    font-size: 18px;
+    color: black;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.index-page .card h3 .notification-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transform: translate(0, 0);
+}
+
+.index-page .card a {
+    display: block;
+    background-color: #00a8e0;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.index-page .card a:hover {
+    background-color: #007bbd;
+}
+
+.index-page .icon-green {
+    font-size: 40px;
+    color: #c4d837;
+    margin-bottom: 10px;
+}
+
+.index-page .notification-badge {
+    background-color: #ff6f61;
+    color: white;
+    padding: 3px 8px;
+    font-size: 12px;
+    border-radius: 50px;
+    font-weight: bold;
+}
+
+/* Dashboard-Specific Styles */
+.dashboard-page .chart-container {
+    width: 50%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .dashboard-page .chart-container {
+        width: 80%;
+    }
+}
+
+@media (max-width: 576px) {
+    .dashboard-page .chart-container {
+        width: 100%;
+    }
+}
+
+/* Consent Page-Specific Styles */
+.consent-page .form-check {
+    display: flex;
+    align-items: center;
+}
+
+.consent-page .form-check-input {
+    margin-right: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header-container {
+        height: auto;
+    }
+
+    .header-row {
+        flex-direction: column;
+    }
+
+    .left-column, .right-column {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .sidebar {
+        width: 200px;
+    }
+
+    .col-md-10.content {
+        flex-grow: 1;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .sidebar {
+        width: 150px;
+    }
+
+    .col-md-10.content {
+        flex-grow: 1;
+        padding: 10px;
+    }
+}

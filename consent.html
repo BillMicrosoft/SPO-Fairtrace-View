@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fairtrace Consent Form</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="consent-page">
+<div class="header-container">
+    <div class="header-row">
+        <div class="left-column">
+            <div class="logo">
+                <img src="https://www.isealalliance.org/sites/default/files/2021-01/Fairtrade%20logo%20resized.png" alt="Logo">
+            </div>
+        </div>
+        <div class="right-column">
+            <div class="help"><i class="fas fa-question-circle"></i> Help</div>
+            <div class="language"><i class="fas fa-globe"></i> Language</div>
+            <div class="user"><i class="fas fa-user"></i> fairtrace_login_demo@outlook.com</div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="sidebar">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="#"><i class="fas fa-users"></i> Business Partners</a>
+            <a href="#"><i class="fas fa-file-alt"></i> Sales</a>
+            <a href="#"><i class="fas fa-question-circle"></i> Questionnaires</a>
+            <a href="#"><i class="fas fa-shield-alt"></i> <span class="text">EUDR Data Sharing</span>
+                <span class="notification-badge-sidebar">New</span></a>
+        </div>
+
+        <div class="col-md-10 content">
+            <div class="card p-4">
+                <h3>Data Sharing Consent Form</h3>
+                <p>I understand and agree to the following:</p>
+
+                <h4>Purpose of Sharing Geolocation Data:</h4>
+                <p>
+                    The European Union Deforestation Regulation (EUDR) requires that all importers of certain agricultural commodities, including coffee, ensure their products are not linked to deforestation. To comply with the EUDR and maintain access to the European market, importers must provide authorities with geolocation data that traces the origin of the products back to the production areas.
+                </p>
+
+                <h4>Terms of Consent:</h4>
+                <ol>
+                    <li>I hereby consent to the sharing of geolocation data (in GeoJSON format) with verified supply chain actors, who request access to this data via the Fairtrace platform.</li>
+                    <li>I understand that by giving this consent, these actors will have direct access to the geolocation data without additional approval from my side.</li>
+                    <li>I acknowledge that this data will be used in accordance with the European Union Deforestation Regulation (EUDR) for deforestation analysis, traceability, and compliance purposes, enabling access to the European market.</li>
+                    <li>I understand that at any moment in time I can withdraw my consent and stop access to my geolocation data, without any type of explanation.</li>
+                </ol>
+
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="agree">
+                    <label class="form-check-label" for="agree">I AGREE</label>
+                    <span class="notification-badge-sidebar">Tick before submitting</span>
+                </div>
+                <button type="button" class="btn btn-primary mt-3" onclick="submitConsent()">Submit Consent</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function submitConsent() {
+        var agree = document.getElementById('agree').checked;
+        if (agree) {
+            window.location.href = "dashboard.html";
+        } else {
+            alert('You must agree to share the data before submitting.');
+        }
+    }
+</script>
+</body>
+</html>

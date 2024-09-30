@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fairtrace Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css"
+</head>
+<body class="dashboard-page">
+<div class="header-container">
+    <div class="header-row">
+        <div class="left-column">
+            <div class="logo">
+                <img src="https://www.isealalliance.org/sites/default/files/2021-01/Fairtrade%20logo%20resized.png" alt="Logo">
+            </div>
+        </div>
+        <div class="right-column">
+            <div class="help"><i class="fas fa-question-circle"></i> Help</div>
+            <div class="language"><i class="fas fa-globe"></i> Language</div>
+            <div class="user"><i class="fas fa-user"></i> fairtrace_login_demo@outlook.com</div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="sidebar">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="#"><i class="fas fa-users"></i> Business Partners</a>
+            <a href="#"><i class="fas fa-file-alt"></i> Sales</a>
+            <a href="#"><i class="fas fa-question-circle"></i> Questionnaires</a>
+            <a href="#"><i class="fas fa-shield-alt"></i> EUDR Data Sharing
+                <span class="notification-badge-sidebar">New</span>
+            </a>
+        </div>
+
+        <div class="col-md-10 content">
+            <div class="card p-4">
+                <h2>Your Data Download Report</h2>
+                <div class="dashboard-summary">
+                    <div class="download-summary">
+                        Data has been downloaded <strong>10</strong> times by importers.
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="pieChart"></canvas>
+                    </div>
+                </div>
+                <!-- Scrollable Table below the Pie Chart -->
+                <div style="max-height: 300px; overflow-y: auto; margin-top: 20px;">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>FloID</th>
+                                <th>Country</th>
+                                <th>Type of Trader</th>
+                                <th>Downloaded On</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Trader A</td>
+                                <td>ABCDEF</td>
+                                <td>Country C</td>
+                                <td>Exporter</td>
+                                <td>2024-09-29 10:30 AM</td>
+                            </tr>
+                            <tr>
+                                <td>Trader B</td>
+                                <td>ABCDEF</td>
+                                <td>Country A</td>
+                                <td>Importer</td>
+                                <td>2024-09-29 11:00 AM</td>
+                            </tr>
+                            <tr>
+                                <td>Trader C</td>
+                                <td>ABCDEF</td>
+                                <td>Country A</td>
+                                <td>Importer</td>
+                                <td>2024-09-29 11:30 AM</td>
+                            </tr>
+                            <tr>
+                                <td>Trader D</td>
+                                <td>ABCDEF</td>
+                                <td>Country A</td>
+                                <td>Exporter</td>
+                                <td>2024-09-29 12:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Trader E</td>
+                                <td>ABCDEF</td>
+                                <td>Country A</td>
+                                <td>Importer</td>
+                                <td>2024-09-29 12:30 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Trader F</td>
+                                <td>ABCDEF</td>
+                                <td>Country B</td>
+                                <td>Exporter</td>
+                                <td>2024-09-29 1:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Trader G</td>
+                                <td>ABCDEF</td>
+                                <td>Country B</td>
+                                <td>Importer</td>
+                                <td>2024-09-29 1:30 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Trader H</td>
+                                <td>ABCDEF</td>
+                                <td>Country B</td>
+                                <td>Exporter</td>
+                                <td>2024-09-29 2:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Trader I</td>
+                                <td>ABCDEF</td>
+                                <td>Country C</td>
+                                <td>Importer</td>
+                                <td>2024-09-29 2:30 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Trader J</td>
+                                <td>ABCDEF</td>
+                                <td>Country C</td>
+                                <td>Exporter</td>
+                                <td>2024-09-29 3:00 PM</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    window.onload = function () {
+        var ctx = document.getElementById('pieChart').getContext('2d');
+        var pieChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Country A', 'Country B', 'Country C'],
+                datasets: [{
+                    data: [4, 3, 3],
+                    backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
+                }]
+            }
+        });
+    };
+</script>
+</body>
+</html>
